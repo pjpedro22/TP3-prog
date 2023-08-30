@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MealCategory from './category/component/components/MealCategory'
+import MealCategory from './category/components/MealCategory'
 import {QueryClientProvider, QueryClient} from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
