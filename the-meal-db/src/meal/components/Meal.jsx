@@ -27,15 +27,15 @@ const Meal = () => {
   return (
     <Container>
       <HomeLink />
-      <Card>
+      <Card className='bg-secondary-subtle'>
         {data && data.map(meal =>
           <React.Fragment key={meal.idMeal}>
             <Card.Title>{meal.strMeal}</Card.Title>
             <Card.Body>
               <Card.Subtitle>Category: {meal.strCategory}</Card.Subtitle>
-              <Card.Img src={meal.strMealThumb} />
+              <Card.Img className='recipe' src={meal.strMealThumb} />
             </Card.Body>
-            <RecipeAccordion mealInfo={meal} />
+              <RecipeAccordion mealInfo={meal} />
           </React.Fragment>
         )}
       </Card>

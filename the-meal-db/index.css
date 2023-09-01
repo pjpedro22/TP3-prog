@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  letter-spacing: .2rem;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.over {
+  overflow: scroll;
+}
+
+.zero {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+.card {
+  opacity: .8;
+  padding: 2rem;
+}
+
+.recipe-container {
+  width: 23rem;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.recipe {
+  width: 6rem;
+}
+
+.frank {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: .01rem;
+}
+
+.homelink {
+  color: white;
+}
+
+.pic {
+  max-height: 6rem;
+}
+
+.category {
+  margin-left: 4em;
+}

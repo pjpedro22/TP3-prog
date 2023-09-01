@@ -16,7 +16,7 @@ const RecipeAccordion = ({mealInfo}) => {
       </Accordion.Item>
       <Accordion.Item eventKey="1">
         <Accordion.Header>Directions</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Body className='frank'>
           {mealInfo.strInstructions}
         </Accordion.Body>
       </Accordion.Item>

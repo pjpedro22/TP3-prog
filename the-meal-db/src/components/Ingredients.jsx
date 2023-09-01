@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const Ingredients = ({mealInfo}) => {
   const ingredients = [];
@@ -14,15 +15,14 @@ const Ingredients = ({mealInfo}) => {
   }
 
   return (
-    <ul>
+    <ListGroup>
       {ingredients.map((ingredient, i) => (
         <li key={i}>
-          <Col>{ingredient.ingredient}</Col>
-          <Col>{ingredient.measure}</Col>
-          <hr />
+          <ListGroup.Item className='frank'>{ingredient.ingredient}</ListGroup.Item>
+          <ListGroup.Item>{ingredient.measure}</ListGroup.Item>
         </li>
       ))}
-    </ul>
+    </ListGroup>
   )
 }
 

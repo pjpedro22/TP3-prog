@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container'
 import HomeLink from '../../components/HomeLink'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import { Image } from 'react-bootstrap'
 import Loading from '../../components/Loading'
 
@@ -25,24 +26,26 @@ const Category = () => {
   if (isError) return <div>Error: {error.message}</div>
 
   return (
-    <Container>
-      <HomeLink />
-      <h1>{params.name} recipes</h1>
-      <Col>
+    <div className='category d-flex flex-column mb-3 content'>
+      <div className='zero'>
+        <HomeLink  />
+        <h1 className='text-white'>{params.name} recipes</h1>
+      </div>
+      <div className="over d-flex flex-wrap">
         {data && data.map(meals =>
-          <React.Fragment key={meals.strMeal}>
-            <Card>
-              <Link to={`/meals/${meals.idMeal}`}>
-                <Card>
-                  <Card.Img variant="top" src={meals.strMealThumb} alt={meals.strMeal} />
-                  <Card.Title>{meals.strMeal}</Card.Title>
-                </Card>
+          <div className='' key={meals.strMeal}>
+            <div className='recipe-container p-3 my-3'>
+              <Link className="link-underline-danger text-light link-underline-opacity-0" to={`/meals/${meals.idMeal}`}>
+                <div className='recipe d-flex' md={4}>
+                  <Image className='pic img-fluid m-3' src={meals.strMealThumb} alt={meals.strMeal} roundedCircle/>
+                  <Card.Title className='text-white mt-4'>{meals.strMeal}</Card.Title>
+                </div>
               </Link>
-            </Card>
-          </React.Fragment>
+            </div>
+          </div>
         )}
-      </Col>
-    </Container>
+      </div>
+    </div>
   )
 }
 
