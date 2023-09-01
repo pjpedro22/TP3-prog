@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import AllCategories from './allCategories/components/AllCategories'
 import Category from './category/components/Category'
 import Meal from './meal/components/Meal'

@@ -26,7 +26,8 @@ class Service {
     const res = await fetch(`${this.mainUrl}${this.meal}${id}`)
     if (!res.ok) throw new Error()
     const data = await res.json()
-    return data
+    const newData = data.meals
+    return newData
   }
 
 }
