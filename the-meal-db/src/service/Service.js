@@ -15,10 +15,11 @@ class Service {
   }
 
   async getCategory(categoryName) {
-    const res = await fetch(`${this.mainUrl}${this.category}${categoryNaMe}`)
+    const res = await fetch(`${this.mainUrl}${this.category}${categoryName}`)
     if (!res.ok) throw new Error()
     const data = await res.json()
-    return data
+    const newData = data.meals
+    return newData
   }
 
   async getMeal(id) {
