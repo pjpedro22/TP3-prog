@@ -1,23 +1,34 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
-import CategoryService from '../service/CategoryService'
+import { Link } from 'react-router-dom'
+import Service from '../../service/Service'
+import Container from 'react-bootstrap/Container'
 
-const categoryService = new CategoryService()
+const service = new Service()
 
 const MealCategory = () => {
 
   const {isLoading, isError, data, error} = useQuery ({
-    queryKey: ['category'],
-    queryFn: () => categoryService.getAllCategories()
+    queryKey: ['categories'],
+    queryFn: () => service.getAllCategories()
   })
 
   if (isLoading) return <div>Loading...</div>
   if (isError) return <div>Error: {error.message}</div>
 
   return (
-    <div>
-      {data && data.map(category => <p key={category.strCategory}>{category.strCategory}</p>)}
-    </div>
+    <Container>
+      <h1>Accueil</h1>
+      <div>
+        <h2>Choose a meal category</h2>
+        <div>
+          {data && data.map(categories =>
+            <Link key={category.idCategory} to={`/categories/${category.strCategory}`}>
+              {category.strCategory}
+            </Link>)}
+        </div>
+      </div>
+    </Container>
   )
 }
 

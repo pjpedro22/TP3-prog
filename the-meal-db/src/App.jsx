@@ -18,7 +18,6 @@ function App() {
         <Route path='/meals/:id' element={<Meal />} />
       </Routes>
     </QueryClientProvider>
-    
   )
 }
 
