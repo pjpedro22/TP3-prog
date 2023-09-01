@@ -10,7 +10,8 @@ class Service {
     const res = await fetch(`${this.mainUrl}${this.allCategories}`)
     if (!res.ok) throw new Error()
     const data = await res.json()
-    return data
+    const newData = data.categories
+    return newData
   }
 
   async getCategory(categoryName) {

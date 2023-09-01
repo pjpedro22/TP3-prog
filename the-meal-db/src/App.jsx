@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import MealCategory from './mealCategory/components/MealCategory'
-import Category from './category/components/Category'
+import AllCategories from './allCategories/components/AllCategories'
+import MealCategory from './allCategories/components/AllCategories'
 import Meal from './meal/components/Meal'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Routes, Route } from 'react-router-dom'
@@ -13,8 +13,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
-        <Route path='/' element={<MealCategory />} />
-        <Route path='categories/:name' element={<Category />} />
+        <Route path='/' element={<AllCategories />} />
+        <Route path='categories/:name' element={<MealCategory />} />
         <Route path='/meals/:id' element={<Meal />} />
       </Routes>
     </QueryClientProvider>

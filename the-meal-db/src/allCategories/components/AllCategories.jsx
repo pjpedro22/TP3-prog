@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 
 const service = new Service()
 
-const MealCategory = () => {
+const AllCategories = () => {
 
   const {isLoading, isError, data, error} = useQuery ({
     queryKey: ['categories'],
@@ -23,8 +23,8 @@ const MealCategory = () => {
         <h2>Choose a meal category</h2>
         <div>
           {data && data.map(categories =>
-            <Link key={category.idCategory} to={`/categories/${category.strCategory}`}>
-              {category.strCategory}
+            <Link to={`/categories/${categories.strCategory}`} key={categories.idCategory} >
+              {categories.strCategory}
             </Link>)}
         </div>
       </div>
@@ -32,4 +32,4 @@ const MealCategory = () => {
   )
 }
 
-export default MealCategory
+export default AllCategories
