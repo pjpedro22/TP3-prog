@@ -1,6 +1,7 @@
+import React from 'react'
 import { useState } from 'react'
 import MealCategory from './category/components/MealCategory'
-import {QueryClientProvider, QueryClient} from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 
@@ -11,6 +12,7 @@ function App() {
       <h1>Accueil</h1>
       <MealCategory />
     </QueryClientProvider>
+    
   )
 }
 
