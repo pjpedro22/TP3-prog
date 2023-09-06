@@ -28,12 +28,12 @@ const Category = () => {
   return (
     <div className='category d-flex flex-column mb-3 content'>
       <div className='zero'>
-        <HomeLink  />
+        <HomeLink />
         <h1 className='text-white'>{params.name} recipes</h1>
       </div>
-      <div className="over d-flex flex-wrap">
+      <div className='grid'>
         {data && data.map(meals =>
-          <div className='' key={meals.strMeal}>
+          <div key={meals.strMeal}>
             <div className='recipe-container p-3 my-3'>
               <Link className="link-underline-danger text-light link-underline-opacity-0" to={`/meals/${meals.idMeal}`}>
                 <div className='recipe d-flex' md={4}>

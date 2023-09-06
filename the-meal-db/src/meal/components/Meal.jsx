@@ -3,10 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useParams} from 'react-router-dom'
 import Service from '../../service/Service'
 import HomeLink from '../../components/HomeLink'
-import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
-import { Image } from 'react-bootstrap'
 import RecipeAccordion from '../../components/RecipeAccordion'
 import Loading from '../../components/Loading'
 
@@ -25,9 +22,9 @@ const Meal = () => {
   if (isError) return <div>Error: {error.message}</div>
 
   return (
-    <Container>
+    <div className='fixed'>
       <HomeLink />
-      <Card className='bg-secondary-subtle'>
+      <Card className='bg-secondary-subtle sticky'>
         {data && data.map(meal =>
           <React.Fragment key={meal.idMeal}>
             <Card.Title>{meal.strMeal}</Card.Title>
@@ -39,7 +36,7 @@ const Meal = () => {
           </React.Fragment>
         )}
       </Card>
-    </Container>
+    </div>
   )
 }
 
