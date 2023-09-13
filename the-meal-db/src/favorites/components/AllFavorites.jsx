@@ -14,9 +14,9 @@ const AllFavorites = () => {
     <div className='category d-flex flex-column mb-3 content'>
       <div className='zero'>
         <HomeLink />
-        <h1>Favorites</h1>
+        <h1 className='text-white'>Favorites</h1>
       </div>
-      <div className="gird">
+      <div className="grid">
         {meal.map(favorite => (
           <div key={favorite.idMeal}>
             <div className='recipe-container p-3 my-3'>

@@ -29,8 +29,10 @@ const Meal = () => {
       <Card className='bg-secondary-subtle sticky'>
         {data && data.map(meal =>
           <React.Fragment key={meal.idMeal}>
-            <Card.Title>{meal.strMeal}</Card.Title>
-            <FavoriteButton meal={meal} />
+            <div className='d-flex'>
+              <Card.Title>{meal.strMeal}</Card.Title>
+              <FavoriteButton meal={meal} />
+            </div>
             <Card.Body>
               <Card.Subtitle>Category: {meal.strCategory}</Card.Subtitle>
               <Card.Img className='recipe' src={meal.strMealThumb} />
