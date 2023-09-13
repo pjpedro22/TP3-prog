@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 import RecipeAccordion from '../../components/RecipeAccordion'
 import Loading from '../../components/Loading'
 import FavoriteButton from '../../favorites/components/FavoriteButton'
-import AllFavorites from '../../favorites/components/AllFavorites'
+import FavoritesLink from '../../favorites/components/FavoritesLink'
 
 const service = new Service()
 
@@ -25,6 +25,7 @@ const Meal = () => {
   return (
     <div className='fixed'>
       <HomeLink />
+      <FavoritesLink />
       <Card className='bg-secondary-subtle sticky'>
         {data && data.map(meal =>
           <React.Fragment key={meal.idMeal}>
@@ -38,7 +39,6 @@ const Meal = () => {
           </React.Fragment>
         )}
       </Card>
-      <AllFavorites />
     </div>
   )
 }

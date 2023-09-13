@@ -7,7 +7,7 @@ import { Row } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Loading from '../../components/Loading'
-import AllFavorites from '../../favorites/components/AllFavorites'
+import FavoritesLink from '../../favorites/components/FavoritesLink'
 
 const service = new Service()
 
@@ -37,7 +37,7 @@ const AllCategories = () => {
         </>
       </Row>
       <Link to={`/favorites`}>
-        <AllFavorites />
+        <FavoritesLink />
       </Link>
       
     </Container>

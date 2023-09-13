@@ -3,13 +3,12 @@ import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Service from '../../service/Service'
-import Container from 'react-bootstrap/Container'
 import HomeLink from '../../components/HomeLink'
 import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 import { Image } from 'react-bootstrap'
 import Loading from '../../components/Loading'
+import FavoritesLink from '../../favorites/components/FavoritesLink'
+import FavoriteButton from '../../favorites/components/FavoriteButton'
 
 const service = new Service()
 
@@ -28,6 +27,7 @@ const Category = () => {
     <div className='category d-flex flex-column mb-3 content'>
       <div className='zero'>
         <HomeLink />
+        <FavoritesLink />
         <h1 className='text-white'>{params.name} recipes</h1>
       </div>
       <div className='grid'>
@@ -40,6 +40,7 @@ const Category = () => {
                   <Card.Title className='text-white mt-4'>{meals.strMeal}</Card.Title>
                 </div>
               </Link>
+              <FavoriteButton meal={meals} />
             </div>
           </div>
         )}

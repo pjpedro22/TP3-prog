@@ -1,23 +1,39 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import FavoriteButton from './FavoriteButton'
-import { addFavorite, removeFavorite } from '../store/favoritesSlice'
 import HomeLink from '../../components/HomeLink'
+import { favoriteSelector } from '../store/favoriteSelectors'
+import { Link } from 'react-router-dom'
+import { Image } from 'react-bootstrap'
 
 
 const AllFavorites = () => {
-  const meal = useSelector(state => state.favorites);
-  const dispatch = useDispatch();
+  const meal = useSelector(favoriteSelector);
 
   return (
-    <div>
-      <HomeLink />
-      <h3>Favorites</h3>
-      {meal.favorites.map(favorite => (
-        <div key={meal.id}>{favorite}</div>
-      ))}
+    <div className='category d-flex flex-column mb-3 content'>
+      <div className='zero'>
+        <HomeLink />
+        <h1>Favorites</h1>
+      </div>
+      <div className="gird">
+        {meal.map(favorite => (
+          <div key={favorite.idMeal}>
+            <div className='recipe-container p-3 my-3'>
+              <Link className="link-underline-danger text-light link-underline-opacity-0" to={`/meals/${favorite.idMeal}`}>
+                <div className='recipe d-flex' md={4}>
+                  <Image className='pic img-fluid m-3' src={favorite.strMealThumb} alt={favorite.strMeal} roundedCircle />
+                  <h3>{favorite.strMeal}</h3>
+                </div>
+              </Link>
+              <FavoriteButton meal={favorite} />
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      
 
-      <FavoriteButton meal={meal} />
     </div>
   )
 }

@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<AllCategories />} />
         <Route path='categories/:name' element={<Category />} />
         <Route path='/meals/:id' element={<Meal />} />
-        <Route path='favorites' element={<AllFavorites />} />
+        <Route path='/favorites' element={<AllFavorites />} />
       </Routes>
     </QueryClientProvider>
   )
