@@ -15,7 +15,6 @@ const service = new Service()
 
 const Category = () => {
   const params = useParams()
-  console.log(params, 'params')
 
   const { isLoading, isError, data, error } =useQuery({
     queryKey: ['category', params.name],

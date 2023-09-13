@@ -4,7 +4,6 @@ import Ingredients from './Ingredients';
 
 const RecipeAccordion = ({mealInfo}) => {
   const params = useParams()
-  console.log(params, 'accordion')
 
   return (
     <Accordion>

@@ -6,12 +6,13 @@ import HomeLink from '../../components/HomeLink'
 import Card from 'react-bootstrap/Card'
 import RecipeAccordion from '../../components/RecipeAccordion'
 import Loading from '../../components/Loading'
+import FavoriteButton from '../../favorites/components/FavoriteButton'
+import AllFavorites from '../../favorites/components/AllFavorites'
 
 const service = new Service()
 
 const Meal = () => {
   const params = useParams()
-  console.log(params, 'meal params')
 
   const {isLoading, isError, data, error} = useQuery ({
     queryKey: ['meal', params.id],
@@ -28,6 +29,7 @@ const Meal = () => {
         {data && data.map(meal =>
           <React.Fragment key={meal.idMeal}>
             <Card.Title>{meal.strMeal}</Card.Title>
+            <FavoriteButton meal={meal} />
             <Card.Body>
               <Card.Subtitle>Category: {meal.strCategory}</Card.Subtitle>
               <Card.Img className='recipe' src={meal.strMealThumb} />
@@ -36,6 +38,7 @@ const Meal = () => {
           </React.Fragment>
         )}
       </Card>
+      <AllFavorites />
     </div>
   )
 }
